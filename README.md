@@ -15,7 +15,7 @@ Dashboard interactivo desarrollado en Microsoft Power BI para analizar el rendim
 ## Código DAX
 El proyecto incluye cálculos avanzados para medir la eficiencia hospitalaria comparando el rendimiento individual contra la media general.
 
-Total_Altas = COUNTROWS('Altas_Pacientes_Hospitalizados')
+```Total_Altas = COUNTROWS('Altas_Pacientes_Hospitalizados')```
 Esta fórmula obtiene el número total de filas o registros de la tabla “AltasPacientes_Hospitalizados” y lo almacena en “Total_Altas”.
 
 Promedio_LOS = AVERAGE('Altas_Pacientes_Hospitalizados'[Duración de la Estancia])
