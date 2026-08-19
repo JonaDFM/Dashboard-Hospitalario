@@ -16,16 +16,21 @@ Dashboard interactivo desarrollado en Microsoft Power BI para analizar el rendim
 El proyecto incluye cálculos avanzados para medir la eficiencia hospitalaria comparando el rendimiento individual contra la media general.
 
 ```Total_Altas = COUNTROWS('Altas_Pacientes_Hospitalizados')```
+
 Esta fórmula obtiene el número total de filas o registros de la tabla “AltasPacientes_Hospitalizados” y lo almacena en “Total_Altas”.
 
-Promedio_LOS = AVERAGE('Altas_Pacientes_Hospitalizados'[Duración de la Estancia])
+```Promedio_LOS = AVERAGE('Altas_Pacientes_Hospitalizados'[Duración de la Estancia])```
+
 Esta fórmula obtiene el promedio general de los días de estancia de los pacientes en el hospital y lo almacena en “Promedio_LOS”.
 
-Costo_Promedio = AVERAGE('Altas_Pacientes_Hospitalizados'[Costos Totales])
+```Costo_Promedio = AVERAGE('Altas_Pacientes_Hospitalizados'[Costos Totales])```
+
 Esta fórmula obtiene el promedio general de los costos totales de un paciente hospitalizado, para saber cuánto es el promedio que cuesta la hospitalización de alguien.
 
-Costo_Total = SUM(Altas_Pacientes_Hospitalizados[Costos Totales])
+```Costo_Total = SUM(Altas_Pacientes_Hospitalizados[Costos Totales])```
+
 Esta fórmula obtiene la suma de todos los costos totales de los pacientes hospitalizados, permite saber los gastos acumulados de los pacientes dados de alta.
 
-LOS_vs_Promedio = [Promedio_LOS] - CALCULATE([Promedio_LOS], ALL(Altas_Pacientes_Hospitalizados[Nombre de la Instalación]))
+```LOS_vs_Promedio = [Promedio_LOS] - CALCULATE([Promedio_LOS], ALL(Altas_Pacientes_Hospitalizados[Nombre de la Instalación]))```
+
 Esta fórmula compara el promedio de estancia del contexto actual (si hay un filtro aplicado) contra el promedio general. Usa ALL() para ignorar los filtros aplicados al "Nombre de la Instalación" y obtener la media general. Si el resultado es negativo, significa que los pacientes filtrados salen más rápido que el promedio general.
